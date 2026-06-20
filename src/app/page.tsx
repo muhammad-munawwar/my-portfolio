@@ -62,9 +62,9 @@ export default function Home() {
             &copy; {new Date().getFullYear()} Muhammad Munawwar. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-[var(--text-soft)] no-underline text-[0.9rem]">Github</a>
-            <a href="#" className="text-[var(--text-soft)] no-underline text-[0.9rem]">LinkedIn</a>
-            <a href="https://wibify.agency/en" target="_blank" rel="noreferrer" className="text-[var(--text-soft)] no-underline text-[0.9rem]">Design Ins.</a>
+            <a href="https://github.com/muhammad-munawwar" target="_blank" rel="noreferrer" className="text-[var(--text-soft)] hover:text-[var(--primary)] transition-colors duration-300 no-underline text-[0.9rem]">GitHub</a>
+            <a href="https://www.linkedin.com/in/munawwar-ishaq-892180361" target="_blank" rel="noreferrer" className="text-[var(--text-soft)] hover:text-[var(--primary)] transition-colors duration-300 no-underline text-[0.9rem]">LinkedIn</a>
+            <a href="mailto:muhammadmunawwar124@gmail.com" className="text-[var(--text-soft)] hover:text-[var(--primary)] transition-colors duration-300 no-underline text-[0.9rem]">Email</a>
           </div>
         </div>
       </footer>

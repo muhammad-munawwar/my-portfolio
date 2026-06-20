@@ -89,8 +89,13 @@ export const HeroSection = () => {
             <ShinyButton animatedBorder href="#contact" className="text-sm sm:text-base">
               Start a project &rarr;
             </ShinyButton>
-            <ShinyButton href="#projects" className="text-sm sm:text-base">
-              Selected work
+            <ShinyButton 
+              href="/docs/MUHAMMAD MUNAWWAR CV.pdf" 
+              download="MUHAMMAD_MUNAWWAR_CV.pdf"
+              target="_blank"
+              className="text-sm sm:text-base"
+            >
+              Download CV
             </ShinyButton>
           </div>
 

@@ -9,7 +9,9 @@ interface ShinyButtonProps {
   size?: 'sm' | 'md' | 'lg';
   animatedBorder?: boolean;
   type?: 'button' | 'submit' | 'reset';
-  customLineWidth?: number
+  customLineWidth?: number;
+  download?: boolean | string;
+  target?: string;
 }
 
 export const ShinyButton: React.FC<ShinyButtonProps> = ({
@@ -20,7 +22,9 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
   size = 'md',
   animatedBorder = false,
   type = 'button',
-  customLineWidth = 600
+  customLineWidth = 600,
+  download,
+  target
 }) => {
   const baseClasses = "group relative z-10 inline-flex items-center justify-center gap-2 text-white rounded-[2px] overflow-hidden transition-all duration-300 ease-[cubic-bezier(.16,1,.3,1)] font-display cursor-pointer select-none font-medium";
 
@@ -49,6 +53,20 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
   );
 
   if (href) {
+    if (download || target) {
+      return (
+        <a 
+          href={href} 
+          download={download} 
+          target={target} 
+          rel={target === '_blank' ? 'noreferrer' : undefined}
+          className={`${finalClasses}`}
+        >
+          {animatedBorder && renderAnimatedBackground()}
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={`${finalClasses}`}>
         {animatedBorder && renderAnimatedBackground()}
