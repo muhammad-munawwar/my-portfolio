@@ -96,13 +96,13 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
           <div className="flex flex-col" ref={leftColRef}>
             <div className="overflow-hidden pb-2 mb-1 md:mb-2 2xl:mb-3 group cursor-default">
               {/* Name with Hover Animation (Single Line) */}
-              <h2 className="about-title-line font-[family:var(--font-display)] text-[clamp(1.8rem,4vw,3.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] relative overflow-hidden flex h-[1.2em]">
+              <h2 className="about-title-line text-[clamp(2.5rem,3vw,3.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] relative overflow-hidden flex h-[1.2em]">
                 {/* White Title */}
                 <span className="flex">
                   {nameTitle.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="block transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:-translate-y-[110%] text-[var(--text)] whitespace-pre"
+                      className="block transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-y-[-110%] text-(--text) whitespace-pre"
                       style={{ transitionDelay: `${charIndex * 0.02}s` }}
                     >
                       {char === ' ' ? '\u00A0' : char}
@@ -163,12 +163,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
           {/* Right Column: Image */}
           <div ref={rightColRef} className="relative w-full h-[320px] sm:h-[450px] lg:h-[700px] flex items-center justify-center mt-4 lg:mt-0">
             {/* Image Container with floating effect */}
-            <div className="relative w-full max-w-[280px] sm:max-w-[380px] lg:max-w-[500px] aspect-[3/4] drop-shadow-[0_0_40px_rgba(139,92,246,0.15)]">
+            <div className="relative w-full max-w-[280px] sm:max-w-[450px] lg:max-w-full aspect-square lg:aspect-[3/4] drop-shadow-[0_0_40px_rgba(139,92,246,0.15)] animate-[float_6s_ease-in-out_infinite]">
+              {/* Mobile Image (Landscape/Square) - visible only on smaller screens where it stacks below */}
               <Image
-                src="/assets/about-profile.png"
-                alt="Muhammad Munawwar Profile"
+                src="/assets/3d-coding-setup.png"
+                alt="3D Coding Setup Illustration"
                 fill
-                className="object-contain"
+                className="object-contain block lg:hidden"
+                priority
+              />
+              {/* Desktop Image (Portrait) - visible only on large screens where it sits on the right */}
+              <Image
+                src="/assets/3d-coding-portrait.png"
+                alt="3D Vertical Tech Stack Illustration"
+                fill
+                className="object-contain hidden lg:block"
                 priority
               />
             </div>
