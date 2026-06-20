@@ -4,17 +4,21 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ShinyButton } from './ShinyButton';
 import dynamic from 'next/dynamic';
+import { useLoading } from '@/context/LoadingContext';
 
 const Badge = dynamic(() => import('./Badge'), { ssr: false });
 
 export const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [eventSource, setEventSource] = useState<HTMLElement | null>(null);
+  const { isLoading } = useLoading();
 
   useEffect(() => {
     if (containerRef.current) {
       setEventSource(containerRef.current);
     }
+
+    if (isLoading) return; // Wait until loaded before animating
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
@@ -47,7 +51,7 @@ export const HeroSection = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isLoading]);
 
   return (
     <section

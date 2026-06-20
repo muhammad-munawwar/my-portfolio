@@ -5,11 +5,14 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { ShinyButton } from './ShinyButton';
 import { Logo } from './Logo';
+import { useLoading } from '@/context/LoadingContext';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const menuContainerRef = useRef<HTMLDivElement>(null);
+  const navContainerRef = useRef<HTMLDivElement>(null);
+  const { isLoading } = useLoading();
 
   const navLinks = [
     { id: '#about', title: 'About' },
@@ -18,6 +21,15 @@ export const Navbar = () => {
     { id: '#experience', title: 'Experience' },
     { id: '#contact', title: 'Contact' },
   ];
+
+  useEffect(() => {
+    if (!isLoading && navContainerRef.current) {
+      gsap.fromTo(navContainerRef.current,
+        { y: -100, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.2 }
+      );
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     const menu = menuRef.current;
@@ -53,8 +65,8 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className='w-full z-[100] fixed py-3 flex justify-center'>
-        <nav className="p-1.5 2xl:p-2 grid grid-cols-[20%_60%_20%] bg-[#10101258] border border-blue-400/10 w-max min-w-[360px] rounded-sm">
+      <div ref={navContainerRef} className='w-full z-[100] fixed py-3 flex justify-center opacity-0'>
+        <nav className="p-1.5 2xl:p-2 grid grid-cols-[20%_60%_20%] bg-[#10101258] border border-blue-400/10 w-max min-w-[360px] rounded-sm backdrop-blur-md">
           <div className='flex justify-center'>
             <Link href="/" className="flex items-center no-underline">
               <Logo size={34} />
