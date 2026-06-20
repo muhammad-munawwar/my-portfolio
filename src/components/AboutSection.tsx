@@ -80,7 +80,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
   const nameTitle = "Muhammad Munawwar.";
 
   return (
-    <section ref={sectionRef} id="about" className="border-b border-[var(--border)] py-24 px-8 relative overflow-hidden">
+    <section ref={sectionRef} id="about" className="border-b border-[var(--border)] py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden">
       {/* Subtle Background Glow behind the image section */}
       <div className="absolute right-[5%] top-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--primary)]/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -91,12 +91,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 mt-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 sm:gap-12 lg:gap-20 mt-4 sm:mt-8 items-center">
           {/* Left Column: Text & Technologies */}
           <div className="flex flex-col" ref={leftColRef}>
             <div className="overflow-hidden pb-2 mb-1 md:mb-2 2xl:mb-3 group cursor-default">
               {/* Name with Hover Animation (Single Line) */}
-              <h2 className="about-title-line font-[family:var(--font-display)] text-[clamp(2.2rem,4vw,3.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] relative overflow-hidden flex h-[1.2em]">
+              <h2 className="about-title-line font-[family:var(--font-display)] text-[clamp(1.8rem,4vw,3.5rem)] font-extrabold tracking-[-0.03em] leading-[1.1] relative overflow-hidden flex h-[1.2em]">
                 {/* White Title */}
                 <span className="flex">
                   {nameTitle.split('').map((char, charIndex) => (
@@ -124,11 +124,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
               </h2>
             </div>
 
-            <p className="about-desc text-[1.5rem] md:text-[1.2rem] 2xl:text-[1.5rem] mt-1 text-(--primary)">
+            <p className="about-desc text-[1.1rem] sm:text-[1.2rem] 2xl:text-[1.5rem] mt-1 text-(--primary)">
               Software Engineer & MERN Stack Developer
             </p>
 
-            <div className="mt-8 text-(--text-soft) leading-[1.7] space-y-6 text-[1.05rem]">
+            <div className="mt-6 sm:mt-8 text-(--text-soft) leading-[1.7] space-y-4 sm:space-y-6 text-[0.95rem] sm:text-[1.05rem]">
               <p className="about-desc">
                 With over <strong>1.5 years of professional on-site experience</strong> and ongoing remote work, I specialize in building robust, scalable software solutions. In my current remote role, I manage a production-level Sales CRM, oversee the company's digital portfolio, and am laying the groundwork for an upcoming HRM application.
               </p>
@@ -140,8 +140,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
               </p>
             </div>
 
-            <div className="mt-12">
-              <h3 className="about-desc font-[family:var(--font-display)] text-xl font-bold mb-5 text-[var(--text)]">
+            <div className="mt-8 sm:mt-12">
+              <h3 className="about-desc font-[family:var(--font-display)] text-lg sm:text-xl font-bold mb-4 sm:mb-5 text-[var(--text)]">
                 Technological Stack
               </h3>
               <div className="flex flex-wrap gap-2 md:gap-3">
@@ -161,9 +161,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ technologies }) => {
           </div>
 
           {/* Right Column: Image */}
-          <div ref={rightColRef} className="relative w-full h-[500px] lg:h-[700px] flex items-center justify-center">
+          <div ref={rightColRef} className="relative w-full h-[320px] sm:h-[450px] lg:h-[700px] flex items-center justify-center mt-4 lg:mt-0">
             {/* Image Container with floating effect */}
-            <div className="relative w-full max-w-[500px] aspect-[3/4] drop-shadow-[0_0_40px_rgba(139,92,246,0.15)]">
+            <div className="relative w-full max-w-[280px] sm:max-w-[380px] lg:max-w-[500px] aspect-[3/4] drop-shadow-[0_0_40px_rgba(139,92,246,0.15)]">
               <Image
                 src="/assets/about-profile.png"
                 alt="Muhammad Munawwar Profile"

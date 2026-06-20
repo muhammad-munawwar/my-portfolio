@@ -110,7 +110,7 @@ export const ServicesSection = ({ services }: any) => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="work" className="relative bg-[var(--bg)] pt-24 pb-20 border-b border-[var(--border)] overflow-hidden">
+    <section ref={sectionRef} id="work" className="relative bg-[var(--bg)] pt-16 pb-12 sm:pt-24 sm:pb-20 border-b border-[var(--border)] overflow-hidden">
       {/* Animated Background Rings */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vw] md:w-[120vw] max-w-[1500px] aspect-square opacity-[0.04] pointer-events-none z-0 flex items-center justify-center animate-[spin_120s_linear_infinite]">
         <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" stroke="#00d2ff" strokeWidth="0.15">
@@ -128,17 +128,17 @@ export const ServicesSection = ({ services }: any) => {
 
       <div className="custom-container relative z-10 flex flex-col">
         {/* Header section inside the container */}
-        <div ref={headerRef} className="mb-14">
+        <div ref={headerRef} className="mb-10 sm:mb-14">
           <div className="overflow-hidden inline-block mb-2 pb-1">
-            <span className="services-tag mono-tag text-(--primary) text-[0.8rem] tracking-widest font-semibold uppercase block">
+            <span className="services-tag mono-tag text-(--primary) text-[0.75rem] sm:text-[0.8rem] tracking-widest font-semibold uppercase block">
               [03] SERVICES / WHAT I DO
             </span>
           </div>
-          <h2 className="text-[2.5rem] md:text-[4rem] lg:text-[4.5rem] font-bold mt-4 tracking-[-0.02em] leading-[1.1] text-[var(--text)] flex flex-col">
-            <span className="overflow-hidden pb-2">
+          <h2 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[4.5rem] font-bold mt-2 sm:mt-4 tracking-[-0.02em] leading-[1.1] text-[var(--text)] flex flex-col">
+            <span className="overflow-hidden pb-1 sm:pb-2">
               <span className="services-title-line block">Engineering <span className="text-(--primary)">scalable</span></span>
             </span>
-            <span className="overflow-hidden pb-2 -mt-2">
+            <span className="overflow-hidden pb-1 sm:pb-2 -mt-1 sm:-mt-2">
               <span className="services-title-line block">software solutions.</span>
             </span>
           </h2>
@@ -149,26 +149,26 @@ export const ServicesSection = ({ services }: any) => {
           {customServices.map((service, index) => (
             <div
               key={index}
-              className="service-card group relative bg-[#0a0a0b] hover:bg-[#111113] transition-colors duration-500 overflow-hidden flex flex-col p-10 md:p-8 2xl:p-10 min-h-[380px] border border-[var(--border)] rounded-md"
+              className="service-card group relative bg-[#0a0a0b] hover:bg-[#111113] transition-colors duration-500 overflow-hidden flex flex-col p-6 sm:p-8 2xl:p-10 min-h-[320px] sm:min-h-[380px] border border-[var(--border)] rounded-md"
             >
               {/* Top Glow on Hover */}
               <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#00d2ff]/80 to-transparent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-[cubic-bezier(.16,1,.3,1)] z-20"></div>
               {/* Background Number */}
               <div
-                className="absolute right-10 top-10 text-[6rem] md:text-[8rem] leading-none font-sans font-black pointer-events-none select-none text-transparent transition-all duration-500 [-webkit-text-stroke:1.5px_rgba(255,255,255,0.1)] group-hover:[-webkit-text-stroke:1.5px_#00d2ff]"
+                className="absolute right-6 top-6 sm:right-10 sm:top-10 text-[4.5rem] sm:text-[6rem] md:text-[8rem] leading-none font-sans font-black pointer-events-none select-none text-transparent transition-all duration-500 [-webkit-text-stroke:1.5px_rgba(255,255,255,0.1)] group-hover:[-webkit-text-stroke:1.5px_#00d2ff]"
               >
                 {service.id}
               </div>
 
               {/* Icon Box */}
-              <div className="relative mb-10 w-12 h-12 flex items-center justify-center border border-[#00d2ff]/30 bg-[#00d2ff]/5  group-hover:-rotate-5 group-hover:scale-[1.05] group-hover:border-[#00d2ff]/60 group-hover:bg-[#00d2ff]/10 transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]">
-                <div className="relative z-10 text-[#00d2ff]">
+              <div className="relative mb-6 sm:mb-10 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center border border-[#00d2ff]/30 bg-[#00d2ff]/5  group-hover:-rotate-5 group-hover:scale-[1.05] group-hover:border-[#00d2ff]/60 group-hover:bg-[#00d2ff]/10 transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]">
+                <div className="relative z-10 text-[#00d2ff] w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center">
                   {service.icon}
                 </div>
               </div>
 
               {/* Title with Hover Animation */}
-              <h3 className="font-[family:var(--font-display)] text-3xl md:text-4xl font-bold mb-4 relative overflow-hidden flex h-[1.2em]">
+              <h3 className="font-[family:var(--font-display)] text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 relative overflow-hidden flex h-[1.2em]">
                 {/* White Title */}
                 <span className="flex">
                   {service.title.split('').map((char, charIndex) => (
@@ -196,7 +196,7 @@ export const ServicesSection = ({ services }: any) => {
               </h3>
 
               {/* Description */}
-              <p className="text-[var(--text-soft)] text-[0.95rem] leading-[1.6] max-w-[85%] sm:max-w-[80%] md:max-w-[70%] 2xl:max-w-[65%] mb-10 relative z-10">
+              <p className="text-[var(--text-soft)] text-sm sm:text-[0.95rem] leading-[1.6] max-w-[85%] sm:max-w-[80%] md:max-w-[70%] 2xl:max-w-[65%] mb-8 sm:mb-10 relative z-10">
                 {service.description}
               </p>
 
@@ -204,9 +204,9 @@ export const ServicesSection = ({ services }: any) => {
                 {service.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="flex items-center gap-1 md:gap-1.5 text-[0.65rem] md:text-[0.7rem] group/tag font-mono uppercase tracking-wider text-[var(--text-muted)] border border-[#00d2ff]/20 p-1.5 hover:border-[#00d2ff]/40 hover:bg-[#00d2ff]/10 bg-[#00d2ff]/5 transition-all duration-300"
+                    className="flex items-center gap-1 md:gap-1.5 text-[0.6rem] sm:text-[0.7rem] group/tag font-mono uppercase tracking-wider text-[var(--text-muted)] border border-[#00d2ff]/20 p-1 sm:p-1.5 hover:border-[#00d2ff]/40 hover:bg-[#00d2ff]/10 bg-[#00d2ff]/5 transition-all duration-300"
                   >
-                    <div className="text-[#00d2ff] p-1 bg-[#00d2ff]/10 flex items-center justify-center opacity-90 transition-transform duration-300 group-hover/tag:-rotate-6 group-hover/tag:scale-110">
+                    <div className="text-[#00d2ff] p-0.5 sm:p-1 bg-[#00d2ff]/10 flex items-center justify-center opacity-90 transition-transform duration-300 group-hover/tag:-rotate-6 group-hover/tag:scale-110">
                       {tag.icon}
                     </div>
                     {tag.text}
@@ -215,7 +215,7 @@ export const ServicesSection = ({ services }: any) => {
               </div>
 
               {/* Arrow */}
-              <div className="absolute right-5 bottom-2 text-[#2e3031] group-hover:text-[#00d2ff] text-2xl 2xl:text-3xl -translate-x-4 group-hover:translate-x-0 transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]">
+              <div className="absolute right-4 bottom-2 sm:right-5 text-[#2e3031] group-hover:text-[#00d2ff] text-xl sm:text-2xl 2xl:text-3xl -translate-x-3 sm:translate-x-0 transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)]">
                 →
               </div>
 
