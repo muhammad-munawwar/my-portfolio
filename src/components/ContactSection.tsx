@@ -153,11 +153,7 @@ export const ContactSection = () => {
               Send a <span className="text-(--primary)">short briefing.</span>
             </h3>
 
-            <form name="contact" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="flex flex-col gap-2.5 md:gap-3 2xl:gap-5">
-              <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden">
-                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-              </p>
+            <form name="contact" onSubmit={handleSubmit} className="flex flex-col gap-2.5 md:gap-3 2xl:gap-5">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3 2xl:gap-5">
                 <Input name="firstName" value={formData.firstName} onChange={handleChange} label="FIRST NAME *" type="text" placeholder="Anna" required />

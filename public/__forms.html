@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netlify Hidden Forms</title>
+</head>
+<body>
+  <!-- This file exists solely for Netlify's build bots to detect and register the forms -->
+
+  <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <input type="text" name="company" />
+    <input type="url" name="website" />
+    <textarea name="message"></textarea>
+    <input name="bot-field" />
+  </form>
+
+  <form name="project-inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="text" name="projectName" />
+    <input type="text" name="firstName" />
+    <input type="text" name="lastName" />
+    <input type="email" name="email" />
+    <input type="tel" name="phone" />
+    <textarea name="projectRequirements"></textarea>
+    <input name="bot-field" />
+  </form>
+
+</body>
+</html>

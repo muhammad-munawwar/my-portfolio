@@ -144,12 +144,7 @@ export const ProjectInquiryModal: React.FC<ProjectInquiryModalProps> = ({ projec
           Interested in a similar project? Fill out the form below and I'll get back to you within 24 hours.
         </p>
 
-        <form name="project-inquiry" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleFormSubmit} className="flex flex-col gap-2.5 md:gap-4">
-          <input type="hidden" name="form-name" value="project-inquiry" />
-          <input type="hidden" name="projectName" value={project.name} />
-          <p className="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-          </p>
+        <form name="project-inquiry" onSubmit={handleFormSubmit} className="flex flex-col gap-2.5 md:gap-4">
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-4">
             <Input name="firstName" value={formData.firstName} onChange={handleChange} label="FIRST NAME *" type="text" placeholder="Anna" required />
