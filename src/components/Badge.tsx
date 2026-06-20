@@ -108,7 +108,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     const bbox = nodes.card.geometry.boundingBox;
     console.log("CARD GEOMETRY BOUNDS:", JSON.stringify({ min: bbox.min, max: bbox.max }));
   }
-  const texture = useTexture('/assets/band.jpg')
+  const texture = useTexture('/assets/band-custom.png')
   const { width, height } = useThree((state) => state.size)
   const viewport = useThree((state) => state.viewport)
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]))
