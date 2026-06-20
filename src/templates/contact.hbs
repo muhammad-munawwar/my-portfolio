@@ -1,0 +1,42 @@
+<div
+  style="font-family: 'Inter', Arial, sans-serif; background-color: #0a0a0b; color: #fafafa; padding: 40px 20px; text-align: center;">
+  <div
+    style="max-width: 600px; margin: 0 auto; background-color: #111113; border: 1px solid rgba(0, 210, 255, 0.2); border-radius: 12px; padding: 30px; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);">
+    <h2
+      style="color: #00d2ff; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 15px; margin-top: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">
+      New Contact Request</h2>
+    <p style="color: #c8c7c2; font-size: 15px; line-height: 1.6;">You have received a new message from your portfolio.
+    </p>
+
+    <div
+      style="background-color: #09090b; padding: 20px; border-radius: 8px; margin: 25px 0; border: 1px solid rgba(255, 255, 255, 0.05);">
+      <p style="margin: 10px 0; font-size: 15px;"><strong
+          style="color: #fafafa; display: inline-block; width: 80px;">Name:</strong> <span
+          style="color: #c8c7c2;">{{firstName}} {{lastName}}</span></p>
+      <p style="margin: 10px 0; font-size: 15px;"><strong
+          style="color: #fafafa; display: inline-block; width: 80px;">Email:</strong> <a href="mailto:{{email}}"
+          style="color: #00d2ff; text-decoration: none;">{{email}}</a></p>
+      <p style="margin: 10px 0; font-size: 15px;"><strong
+          style="color: #fafafa; display: inline-block; width: 80px;">Phone:</strong> <span
+          style="color: #c8c7c2;">{{phone}}</span></p>
+      {{#if company}}<p style="margin: 10px 0; font-size: 15px;"><strong
+          style="color: #fafafa; display: inline-block; width: 80px;">Company:</strong> <span
+          style="color: #c8c7c2;">{{company}}</span></p>{{/if}}
+      {{#if website}}<p style="margin: 10px 0; font-size: 15px;"><strong
+          style="color: #fafafa; display: inline-block; width: 80px;">Website:</strong> <a href="{{website}}"
+          style="color: #00d2ff; text-decoration: none;">{{website}}</a></p>{{/if}}
+    </div>
+
+    {{#if message}}
+    <h3 style="color: #fafafa; margin-top: 35px; font-size: 18px; font-weight: 600;">Message</h3>
+    <div
+      style="background-color: #09090b; padding: 20px; border-radius: 8px; color: #c8c7c2; line-height: 1.7; font-size: 15px; border: 1px solid rgba(255, 255, 255, 0.05);">
+      {{message}}
+    </div>
+    {{/if}}
+
+    <p
+      style="color: #666; font-size: 12px; margin-top: 40px; text-align: center; font-family: monospace; letter-spacing: 1px; text-transform: uppercase;">
+      Sent from your Portfolio</p>
+  </div>
+</div>
