@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     title: "Muhammad Munawwar | Full Stack Developer",
     description: "Premium developer portfolio showcasing specialized CRM/ERP solutions, modern web platforms, mobile apps, and desktop software.",
     siteName: "Muhammad Munawwar Portfolio",
+    images: [
+      {
+        url: "/icon.png",
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Munawwar Portfolio Preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
